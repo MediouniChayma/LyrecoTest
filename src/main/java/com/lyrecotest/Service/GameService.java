@@ -1,23 +1,21 @@
-package com.lyrecotest;
+package com.lyrecotest.Service;
 import com.lyrecotest.Model.Player;
-import com.lyrecotest.Service.PlayerService;
-import com.lyrecotest.Service.QuestionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game {
+public class GameService {
 
-    private Logger logger = LoggerFactory.getLogger(Game.class);
+    private Logger logger = LoggerFactory.getLogger(GameService.class);
     public static List<Player> players = new ArrayList<>();
     private int currentPlayer = 0;
     private boolean isGettingOutOfPenaltyBox;
     private QuestionService questionService;
     private PlayerService playerService;
 
-    public Game(){
+    public GameService(){
         questionService = new QuestionService();
         playerService = new PlayerService();
     }

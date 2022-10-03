@@ -1,7 +1,6 @@
 package com.lyrecotest.Service;
 
 import com.lyrecotest.Common.Const;
-import com.lyrecotest.Game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +24,7 @@ public class QuestionService {
         }
     }
     public String currentCategory(int currentPlayer) {
-        String s = Const.CATEGORY_SQUARE.get(Game.players.get(currentPlayer).getPlace());
+        String s = Const.CATEGORY_SQUARE.get(GameService.players.get(currentPlayer).getPlace());
         s= s==null ? Const.questionTypeRock: s;
         return s;
     }

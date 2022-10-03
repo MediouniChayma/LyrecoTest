@@ -1,5 +1,6 @@
 package com.lyrecotest;
 
+import com.lyrecotest.Service.GameService;
 import com.lyrecotest.Service.PlayerService;
 
 import java.util.Random;
@@ -13,7 +14,7 @@ public class App
     private static boolean notAWinner;
     public static void main( String[] args )
     {
-        Game game=new Game();
+        GameService gameService =new GameService();
         PlayerService playerService=new PlayerService();
 
         playerService.add("Chet");
@@ -22,11 +23,11 @@ public class App
 
         Random rand = new Random();
         do {
-            game.roll(rand.nextInt(5) + 1);
+            gameService.roll(rand.nextInt(5) + 1);
             if (rand.nextInt(9) == 7) {
-                notAWinner = game.wrongAnswer();
+                notAWinner = gameService.wrongAnswer();
             } else {
-                notAWinner = game.wasCorrectlyAnswered();
+                notAWinner = gameService.wasCorrectlyAnswered();
             }
         } while (notAWinner);
     }
